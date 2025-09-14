@@ -1,5 +1,5 @@
-import gleam/io
 import gleam/int
+import gleam/io
 import gleam/list
 
 pub fn main() {
@@ -14,13 +14,13 @@ pub fn main() {
       #(4, "bad"),
     ])
 
-  io.debug(tree)
+  echo tree
 
   let r = pop(tree)
   case r {
     Error(_) -> io.println("There was an error")
     Ok(#(t, v, s)) -> {
-      io.debug(getall(t))
+      echo getall(t)
       io.println("Found: " <> int.to_string(v) <> " (" <> s <> ")")
     }
   }
